@@ -7,6 +7,8 @@ import mongoose from "mongoose";
 import Chat from "./models/chat.js";
 import UserChats from "./models/userChats.js";
 import { ClerkExpressRequireAuth } from "@clerk/clerk-sdk-node";
+import dotenv from "dotenv";
+dotenv.config();
 
 const port = process.env.PORT || 3000;
 const app = express();
@@ -16,7 +18,7 @@ const __dirname = path.dirname(__filename);
 
 app.use(
   cors({
-    origin: process.env.CLIENT_URL,
+    origin: [process.env.CLIENT_URL],
     credentials: true,
   })
 );

@@ -24,7 +24,7 @@ app.use(
 );
 
 app.use(express.json());
-app.use(ClerkExpressRequireAuth());
+
 
 const connect = async () => {
   try {
